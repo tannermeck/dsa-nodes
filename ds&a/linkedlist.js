@@ -1,13 +1,23 @@
+const { node } = require("prop-types");
+
 class linkedListNode {
     constructor(value){
         this.value = value;
         this.next = null
+        this.string = ''
     }
     add(node){
         if (this.next === null) {
-            return node
+            this.next = node
         } else {
-            this.add(node)
+            this.next.add(node)
+        }
+    }
+    getList(){
+        if (this.next === null) {
+            return this.value;
+        } else {
+            return this.value + this.next.getList();
         }
     }
 }
