@@ -4,7 +4,6 @@ class linkedListNode {
     constructor(value){
         this.value = value;
         this.next = null
-        this.string = ''
     }
     add(node){
         if (this.next === null) {
